@@ -1,0 +1,60 @@
+h2, div, body{
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+h2{
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xxx-large;
+    /* font-display: u; */
+}
+
+/* body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+#scoreBoard {
+    min-height: 15vh;
+    /* background-color: bisque; */
+}
+
+#lives{
+    min-height: 5vh;
+}
+
+#PacManGame {
+    min-height: 60vh;
+    background-color: rgb(194, 237, 249);
+    padding: 30px 20px 0px 20px;
+    box-shadow: 10px 10px 20px black;
+    min-width: 65%
+}
+
+body{
+    background-image: url(Resource/Background\ PackMan3.jpg);
+    /* background-repeat:no-repeat;
+    background-size:cover; */
+}
+
+h2{
+    min-height: 5vh;
+}
+
+#table{
+    background-color: rgb(211, 165, 211);
+    font-size: x-large;
+}
+
+#button{
+    font-size: xx-large;
+    border-radius: 15px;
+    background-color: lightcoral;
+}
