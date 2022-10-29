@@ -4,7 +4,7 @@
 function addImg(imgName,width,leftP,btmP){
     let divSelect = document.getElementById('PacManGame')
     let imgPhoto = document.createElement('img')
-    imgPhoto.src = 'Resource/'+imgName
+    imgPhoto.src = 'resource/'+imgName
     imgPhoto.width = width //What is the default unit of measure? why img goes away when px is added
     imgPhoto.style.position = 'fixed'
     imgPhoto.style.left = leftP  + 'px'
@@ -14,9 +14,9 @@ function addImg(imgName,width,leftP,btmP){
     // return imgPhoto //?? Do i need this here?
 }
 
-addImg('Purple-Ghost.png', 50, 20, 300)
-addImg('PacMan-Open-Mouth.png', 50, 80, 300)
-let redGhost = addImg('Red-Ghost.png', 100, 590, 130)
+addImg('purple_ghost.png', 50, 20, 300)
+addImg('pacman_open_mouth.png', 50, 80, 300)
+let redGhost = addImg('red_ghost.png', 100, 590, 130)
 let wall = addImg("wall.jpg", 100, 800, 400)
 
 
@@ -55,7 +55,7 @@ function move() {
             redGhost.style.bottom = parseInt(redGhost.style.bottom) + 5 + 'px';
         }
         else
-            (clearInterval(continueBottom))
+            (clearInterval(continueDown))
     }
 
     function mvGhostDownBy5px(){
