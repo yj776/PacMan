@@ -16,7 +16,8 @@ function addImg(imgName,width,leftP,btmP){
 
 addImg('Purple-Ghost.png', 50, 20, 300)
 addImg('PacMan-Open-Mouth.png', 50, 80, 300)
-let redGhost = addImg('Red-Ghost.png', 50, 1600, 840)
+let redGhost = addImg('Red-Ghost.png', 100, 590, 130)
+let wall = addImg("wall.jpg", 100, 800, 400)
 
 
 function move() {
@@ -27,11 +28,11 @@ function move() {
     let continueDown;
 
     //For window Size 80% zoom
-    let leftBound = 750
-    let rightBound = 1600
-    let btmBound = 190
-    let topBound = 840 //unit in px
-    let ms = 50
+    let leftBound = 590
+    let rightBound = 1400
+    let btmBound = 130
+    let topBound = 730 //unit in px
+    let ms = 5
     
     window.addEventListener("keydown",(e) => {
 
@@ -103,6 +104,9 @@ function move() {
 }
 
 move();
+
+
+
 
 
 

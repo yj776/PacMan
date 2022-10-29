@@ -31,12 +31,27 @@ h2{
 }
 
 #PacManGame {
-    /* display: flex; */
+    display: flex;
+    flex-wrap: wrap;
     min-height: 700px;
-    background-color: rgb(194, 237, 249);
+    background-color: rgb(18, 21, 19);
     padding: none;
     box-shadow: 10px 10px 20px black;
-    min-width: 900px
+    min-width: 900px;
+    /* outline: 5px dotted purple */
+}
+
+#PacManGame div {
+    width: 100px;
+    height: 100px;
+}
+
+.wall {
+    /* background-color: rgb(110, 52, 192); */
+    background-image: url(Resource/wall.jpg);
+    display: flex;
+    flex-wrap: wrap;
+    
 }
 
 /* #PacManGame img{
