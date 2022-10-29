@@ -48,7 +48,7 @@ h2{
 
 .wall {
     /* background-color: rgb(110, 52, 192); */
-    background-image: url(Resource/wall.jpg);
+    background-image: url(resource/wall.jpg);
     display: flex;
     flex-wrap: wrap;
     
