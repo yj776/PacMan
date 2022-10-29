@@ -31,12 +31,19 @@ h2{
 }
 
 #PacManGame {
-    min-height: 60vh;
+    /* display: flex; */
+    min-height: 700px;
     background-color: rgb(194, 237, 249);
-    padding: 30px 20px 0px 20px;
+    padding: none;
     box-shadow: 10px 10px 20px black;
-    min-width: 65%
+    min-width: 900px
 }
+
+/* #PacManGame img{
+    display:flex;
+    position: absolute;
+
+} */
 
 body{
     background-image: url(Resource/Background\ PackMan3.jpg);
