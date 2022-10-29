@@ -4,7 +4,7 @@
 function addImg(imgName,width,leftP,btmP){
     let divSelect = document.getElementById('PacManGame')
     let imgPhoto = document.createElement('img')
-    imgPhoto.src = 'resource/'+imgName
+    imgPhoto.src = 'Resource/'+imgName
     imgPhoto.width = width //What is the default unit of measure? why img goes away when px is added
     imgPhoto.style.position = 'fixed'
     imgPhoto.style.left = leftP  + 'px'
