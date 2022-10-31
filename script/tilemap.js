@@ -1,13 +1,12 @@
 
 let layout = [
-    1,1,1,1,1,1,1
-    // [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-    // [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-    // [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-    // [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-    // [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-    // [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-    // [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+    0,0,1,1,1,0,1,1,1,3,
+    1,0,1,0,1,0,1,0,0,1,
+    1,1,1,1,1,0,1,0,1,1,
+    1,0,0,0,1,1,1,1,1,1,
+    1,1,1,0,1,0,0,1,1,0,
+    1,0,1,1,1,1,0,1,0,0,
+    0,0,1,1,0,0,0,1,1,1
     
 ];
 
@@ -21,29 +20,40 @@ let layout = [
 let squares = []
 function createBoard() {
     for (let i = 0; i<layout.length; i++){
-        if(layout[i] === 1) {
-            let square = document.createElement ('div')
-            console.log(square)
-            // square.src = 'resource/wall.jpg'
-            square.className = 'wall'
-            PacManGame.appendChild(square)
-            squares.push(square)
-            console.log(squares[i])
-            squares[i].classList.add('wall')
-        }
+        let square = document.createElement ('div')
+        PacManGame.appendChild(square)
+        squares.push(square)
         
-
-        if(layout[i] === 0) {
-            let square = document.createElement ('div')
-            console.log(square)
-            // square.src = 'resource/wall.jpg'
-            square.className = 'wall'
-            PacManGame.appendChild(square)
-            squares.push(square)
-            console.log(squares[i])
+        
+        
+        if (layout[i] === 0) {
             squares[i].classList.add('wall')
+           
+        }
+        if(layout[i] === 1) {
+            squares[i].classList.add('pacdot')
+            
+        }
+        if (layout[i] === 2) {
+            squares[i].classList.add('devil')
+        }
+        if (layout[i] === 3) {
+            squares[i].classList.add('goku')
+        }
+        if (layout[i] === 4) {
+            squares[i].classList.add('bkg')
         }
     }
 }
 
 createBoard()
+
+// let devilCurrentIndex = 71
+// console.log(squares[5])
+
+// function moveDevil(e){
+//     squares[devilCurrentIndex].clasList.add('devil')
+//     console.log('devil')
+// }
+
+// createBoard()
