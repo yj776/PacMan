@@ -1,4 +1,3 @@
-
 let endScore;
 
 
@@ -24,6 +23,7 @@ function gameOver(){
     
     
 }
+
 
 
 

@@ -1,5 +1,5 @@
-let devildiv = 40
-let divY = 10
+let devildiv = 97
+let divY = 11
 let divX = 1
 let milsec = 500
 squares[devildiv].classList.add('devil')
@@ -74,9 +74,9 @@ switch(e.key){
         let newIdx = devildiv - divY
             if(newIdx >= 2 && layout[devildiv-divY] !==0){
                 // cntUp = setInterval(mvDevilUpBy1Box,milsec)
-                console.log(devildiv)
-                console.log(divY)
-                console.log(newIdx)
+                // console.log(devildiv)
+                // console.log(divY)
+                // console.log(newIdx)
                 // console.log('setIntervalId: ' + cntUp)
 
 
@@ -86,9 +86,12 @@ switch(e.key){
                 // console.log('indexValueOf1BoxUp inside layout array: '+ layout[devildiv-divY])
             }
 
-            if (layout[devildiv] === 3){
+            if(squares[devildiv].classList.contains('goku')){
                 gameOver()
             }
+            // if (layout[devildiv] === 3){
+            //     gameOver()
+            // }
 
             
         break;
@@ -99,13 +102,16 @@ switch(e.key){
         // clearInterval(cntLeft)
         
         let newIdx2 = devildiv + divY    
-            if (newIdx2 < 79 && layout[devildiv+divY] !==0){
+            if (newIdx2 < 99 && layout[devildiv+divY] !==0){
                 // cntDown = setInterval(mvDevilDownBy1Box,milsec)
                 mvDevilDownBy1Box()
             }
-            if (layout[devildiv] === 3){
+            if(squares[devildiv].classList.contains('goku')){
                 gameOver()
             }
+            // if (layout[devildiv] === 3){
+            //     gameOver()
+            // }
            
         break;
 
@@ -115,13 +121,16 @@ switch(e.key){
         // clearInterval(cntLeft)
     
         let newIdx3 = devildiv + divX
-            if (newIdx3 < 80 && layout[devildiv+divX] !==0){
+            if (newIdx3 < 100 && layout[devildiv+divX] !==0){
                 // cntRight = setInterval(mvDevilRightBy1Box,milsec)
                 mvDevilRightBy1Box()
             }
-            if (layout[devildiv] === 3){
+            if(squares[devildiv].classList.contains('goku')){
                 gameOver()
             }
+            // if (layout[devildiv] === 3){
+            //     gameOver()
+            // }
         break;
 
     case 'a':
@@ -134,9 +143,12 @@ switch(e.key){
                 // cntLeft = setInterval(mvDevilLeftBy1Box,milsec)
                 mvDevilLeftBy1Box()
             }
-            if (layout[devildiv] === 3){
+            if(squares[devildiv].classList.contains('goku')){
                 gameOver()
             }
+            // if (layout[devildiv] === 3){
+            //     gameOver()
+            // }
         break;
 
     }
