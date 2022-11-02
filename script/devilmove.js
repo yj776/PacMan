@@ -17,6 +17,7 @@ let newIdx3;
 let newIdx4;
 
 
+
 window.addEventListener('keydown',(e)=>{
     
 // function mvDevilUpBy1Box(){
@@ -33,11 +34,12 @@ window.addEventListener('keydown',(e)=>{
 function mvDevilUpBy1Box(){
     let newIdx = devildiv - divY
     squares[newIdx].classList.add('devil');
-    console.log(squares[newIdx].classList)
+    // console.log(squares[newIdx].classList)
     squares[devildiv].classList.remove('devil')
     // console.log(squares[devildiv])
     devildiv = newIdx
 }
+
 
 function mvDevilDownBy1Box(){
     let newIdx2 = devildiv + divY
@@ -71,14 +73,14 @@ switch(e.key){
         
         let newIdx = devildiv - divY
             if(newIdx >= 2 && layout[devildiv-divY] !==0){
-                cntUp = setInterval(mvDevilUpBy1Box,milsec)
+                // cntUp = setInterval(mvDevilUpBy1Box,milsec)
                 console.log(devildiv)
                 console.log(divY)
                 console.log(newIdx)
                 // console.log('setIntervalId: ' + cntUp)
 
 
-                // mvDevilUpBy1Box()
+                mvDevilUpBy1Box()
                 // console.log('indexOf1BoxUp:' + newIdx)
                 // console.log(devildiv-divY)
                 // console.log('indexValueOf1BoxUp inside layout array: '+ layout[devildiv-divY])
@@ -97,7 +99,7 @@ switch(e.key){
         // clearInterval(cntLeft)
         
         let newIdx2 = devildiv + divY    
-            if (newIdx2 < 69 && layout[devildiv+divY] !==0){
+            if (newIdx2 < 79 && layout[devildiv+divY] !==0){
                 // cntDown = setInterval(mvDevilDownBy1Box,milsec)
                 mvDevilDownBy1Box()
             }
@@ -113,7 +115,7 @@ switch(e.key){
         // clearInterval(cntLeft)
     
         let newIdx3 = devildiv + divX
-            if (newIdx3 < 70 && layout[devildiv+divX] !==0){
+            if (newIdx3 < 80 && layout[devildiv+divX] !==0){
                 // cntRight = setInterval(mvDevilRightBy1Box,milsec)
                 mvDevilRightBy1Box()
             }
