@@ -1,4 +1,4 @@
-let devildiv = 97
+let devildiv = 79
 let divY = 11
 let divX = 1
 let milsec = 500

@@ -13,19 +13,26 @@ h2{
     font-family: 'Courier New', Courier, monospace;
     font-size: xxx-large;
     margin-top: 10px;
+    margin-bottom: 10git px;
 }
 
+p{
+    margin: 0px;
+    padding: 0px;
+}
 
 #scoreBoard {
-    min-height: 8vh;
+    min-height: 7vh;
+
 }
 
 #instructions{
-        font-size: 22px;
+        font-size: 25px;
+   
 }
 
 li{
-    font-size: 17px
+    font-size: 20px
 }
 
 #lives{
@@ -92,7 +99,7 @@ h2{
 
 #table{
     background-color: rgb(211, 165, 211);
-    font-size: 20px;
+    font-size: 25px;
 }
 
 #button{
