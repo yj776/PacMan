@@ -11,26 +11,6 @@ function timeIncrease() {
 start.onclick = function click() {
     cntTime = setInterval(timeIncrease,1000);
     begin = new Audio('resource/Pac-Man-Theme-Song.mp3')
-        // begin.id = myAudio;
-
-    begin.play()
-        // begin.volume = 0.2;
+        begin.play()
     rmvBackgroundImage()
-    
-   
-    
 }
-
-
-
-// function startbtn() {
-//         start.onclick = function click() {
-//             timer = setInterval(()=>{
-//             timer2.innerHTML = sec + ' seconds';
-//             sec ++;
-//         },1000);
-//         begin = new Audio('resource/Pac-Man-Theme-Song.mp3')
-//         begin.play()
-//     }
-    
-// }

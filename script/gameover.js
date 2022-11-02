@@ -13,7 +13,6 @@ function gameOver(){
         die.volume = 0.005
 
         clearInterval(cntTime)
-        // console.log(parseInt(timer2.innerHTML))
         endScore = parseInt(timer2.innerHTML)
         if(endScore > highestScore2.innerHTML) {
             highestScore2.innerHTML = endScore + ' seconds'

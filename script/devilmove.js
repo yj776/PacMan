@@ -5,10 +5,10 @@ let milsec = 500
 squares[devildiv].classList.add('devil')
 
 
-let cntUp;
-let cntDown;
-let cntRight;
-let cntLeft;
+// let cntUp;
+// let cntDown;
+// let cntRight;
+// let cntLeft;
 
 
 let newIdx;
@@ -19,139 +19,80 @@ let newIdx4;
 
 
 window.addEventListener('keydown',(e)=>{
-    
-// function mvDevilUpBy1Box(){
-//     if(newIdx >= 2 && layout[newIdx] !== 0)
-    
-//     let newIdx = devildiv - divY
-//     squares[newIdx].classList.add('devil');
-//     squares[devildiv].classList.remove('devil')
-//     squares[devildiv].classList.add('bkg')
-//     devildiv = newIdx
-//     return newIdx
-// }
 
-function mvDevilUpBy1Box(){
-    let newIdx = devildiv - divY
-    squares[newIdx].classList.add('devil');
-    // console.log(squares[newIdx].classList)
-    squares[devildiv].classList.remove('devil')
-    // console.log(squares[devildiv])
-    devildiv = newIdx
-}
-
-
-function mvDevilDownBy1Box(){
-    let newIdx2 = devildiv + divY
-    squares[newIdx2].classList.add('devil');
-    // console.log(squares[newIdx2].classList.add('devil'));
-    squares[devildiv].classList.remove('devil')
-    devildiv = newIdx2
-}
-
-function mvDevilRightBy1Box(){
-    let newIdx3 = devildiv + divX
-    squares[newIdx3].classList.add('devil');
-    squares[devildiv].classList.remove('devil')
-    devildiv = newIdx3
-}
-
-function mvDevilLeftBy1Box(){
-    let newIdx4 = devildiv - divX
-    squares[newIdx4].classList.add('devil');
-    squares[devildiv].classList.remove('devil')
-    devildiv = newIdx4
-}
-
-
-
-switch(e.key){
-    case 'w' :  
-        // clearInterval(cntDown)
-        // clearInterval(cntRight)
-        // clearInterval(cntLeft)
-        
+    function mvDevilUpBy1Box(){
         let newIdx = devildiv - divY
-            if(newIdx >= 2 && layout[devildiv-divY] !==0){
-                // cntUp = setInterval(mvDevilUpBy1Box,milsec)
-                // console.log(devildiv)
-                // console.log(divY)
-                // console.log(newIdx)
-                // console.log('setIntervalId: ' + cntUp)
-
-
-                mvDevilUpBy1Box()
-                // console.log('indexOf1BoxUp:' + newIdx)
-                // console.log(devildiv-divY)
-                // console.log('indexValueOf1BoxUp inside layout array: '+ layout[devildiv-divY])
-            }
-
-            if(squares[devildiv].classList.contains('goku')){
-                gameOver()
-            }
-            // if (layout[devildiv] === 3){
-            //     gameOver()
-            // }
-
-            
-        break;
-
-    case 's':
-        // clearInterval(cntUp)
-        // clearInterval(cntRight)
-        // clearInterval(cntLeft)
-        
-        let newIdx2 = devildiv + divY    
-            if (newIdx2 < 99 && layout[devildiv+divY] !==0){
-                // cntDown = setInterval(mvDevilDownBy1Box,milsec)
-                mvDevilDownBy1Box()
-            }
-            if(squares[devildiv].classList.contains('goku')){
-                gameOver()
-            }
-            // if (layout[devildiv] === 3){
-            //     gameOver()
-            // }
-           
-        break;
-
-    case 'd':
-        // clearInterval(cntUp)
-        // clearInterval(cntDown)
-        // clearInterval(cntLeft)
-    
-        let newIdx3 = devildiv + divX
-            if (newIdx3 < 100 && layout[devildiv+divX] !==0){
-                // cntRight = setInterval(mvDevilRightBy1Box,milsec)
-                mvDevilRightBy1Box()
-            }
-            if(squares[devildiv].classList.contains('goku')){
-                gameOver()
-            }
-            // if (layout[devildiv] === 3){
-            //     gameOver()
-            // }
-        break;
-
-    case 'a':
-        // clearInterval(cntUp)
-        // clearInterval(cntDown)
-        // clearInterval(cntRight)
-    
-        let newIdx4 = devildiv - divX
-            if (newIdx4 > 0 && layout[devildiv-divX] !==0){
-                // cntLeft = setInterval(mvDevilLeftBy1Box,milsec)
-                mvDevilLeftBy1Box()
-            }
-            if(squares[devildiv].classList.contains('goku')){
-                gameOver()
-            }
-            // if (layout[devildiv] === 3){
-            //     gameOver()
-            // }
-        break;
-
+        squares[newIdx].classList.add('devil');
+        squares[devildiv].classList.remove('devil')
+        devildiv = newIdx
     }
 
 
-    })
+    function mvDevilDownBy1Box(){
+        let newIdx2 = devildiv + divY
+        squares[newIdx2].classList.add('devil');
+        // console.log(squares[newIdx2].classList.add('devil'));
+        squares[devildiv].classList.remove('devil')
+        devildiv = newIdx2
+    }
+
+    function mvDevilRightBy1Box(){
+        let newIdx3 = devildiv + divX
+        squares[newIdx3].classList.add('devil');
+        squares[devildiv].classList.remove('devil')
+        devildiv = newIdx3
+    }
+
+    function mvDevilLeftBy1Box(){
+        let newIdx4 = devildiv - divX
+        squares[newIdx4].classList.add('devil');
+        squares[devildiv].classList.remove('devil')
+        devildiv = newIdx4
+    }
+
+
+
+    switch(e.key){
+        case 'w' :  
+            let newIdx = devildiv - divY
+                if(newIdx >= 2 && layout[devildiv-divY] !==0){
+                    mvDevilUpBy1Box()
+                }
+
+                if(squares[devildiv].classList.contains('goku')){
+                    gameOver()
+                }     
+            break;
+
+        case 's':
+            let newIdx2 = devildiv + divY    
+                if (newIdx2 < 99 && layout[devildiv+divY] !==0){
+                    mvDevilDownBy1Box()
+                }
+                if(squares[devildiv].classList.contains('goku')){
+                    gameOver()
+                }
+            break;
+
+        case 'd':
+            let newIdx3 = devildiv + divX
+                if (newIdx3 < 100 && layout[devildiv+divX] !==0){
+                    mvDevilRightBy1Box()
+                }
+                if(squares[devildiv].classList.contains('goku')){
+                    gameOver()
+                }
+            break;
+
+        case 'a':
+            let newIdx4 = devildiv - divX
+                if (newIdx4 > 0 && layout[devildiv-divX] !==0){
+                    mvDevilLeftBy1Box()
+                }
+                if(squares[devildiv].classList.contains('goku')){
+                    gameOver()
+                }
+            break;
+
+        }
+        })

@@ -11,8 +11,9 @@ class Enemy{
 enemies = [
     new Enemy('goku',34,120),
     new Enemy('goku',42,175),
-    new Enemy('goku',71,200),
-    new Enemy('goku',26,225)
+    new Enemy('goku',71,100),
+    new Enemy('goku',26,125),
+    new Enemy('goku',30,115)
 ]
 
 enemies.forEach(enemy => {
