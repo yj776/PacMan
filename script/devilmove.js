@@ -1,4 +1,4 @@
-let devildiv = 20
+let devildiv = 40
 let divY = 10
 let divX = 1
 let milsec = 500
@@ -19,30 +19,30 @@ let newIdx4;
 
 window.addEventListener('keydown',(e)=>{
     
+// function mvDevilUpBy1Box(){
+//     if(newIdx >= 2 && layout[newIdx] !== 0)
+    
+//     let newIdx = devildiv - divY
+//     squares[newIdx].classList.add('devil');
+//     squares[devildiv].classList.remove('devil')
+//     squares[devildiv].classList.add('bkg')
+//     devildiv = newIdx
+//     return newIdx
+// }
+
 function mvDevilUpBy1Box(){
     let newIdx = devildiv - divY
     squares[newIdx].classList.add('devil');
-    // return squares[newIdx].classList.add('devil');
-    // console.log(squares[newIdx].classList.add('devil'))
+    console.log(squares[newIdx].classList)
     squares[devildiv].classList.remove('devil')
-    squares[devildiv].classList.add('bkg')
-    // squares[devildiv].classList.add('bg')
     // console.log(squares[devildiv])
     devildiv = newIdx
 }
 
-// function mvDevilUpBy1Box(){
-//     let newIdx = devildiv - divY
-//     squares[newIdx].classList.add('devil');
-//     console.log(squares[newIdx].classList)
-//     squares[devildiv].classList.remove('devil')
-//     // console.log(squares[devildiv])
-//     devildiv = newIdx
-// }
-
 function mvDevilDownBy1Box(){
     let newIdx2 = devildiv + divY
     squares[newIdx2].classList.add('devil');
+    // console.log(squares[newIdx2].classList.add('devil'));
     squares[devildiv].classList.remove('devil')
     devildiv = newIdx2
 }
@@ -70,18 +70,25 @@ switch(e.key){
         // clearInterval(cntLeft)
         
         let newIdx = devildiv - divY
-            if(newIdx >= 0 && layout[devildiv-divY] !==0){
-                // cntUp = setInterval(mvDevilUpBy1Box,milsec)
+            if(newIdx >= 2 && layout[devildiv-divY] !==0){
+                cntUp = setInterval(mvDevilUpBy1Box,milsec)
+                console.log(devildiv)
+                console.log(divY)
+                console.log(newIdx)
                 // console.log('setIntervalId: ' + cntUp)
 
-                mvDevilUpBy1Box()
+
+                // mvDevilUpBy1Box()
                 // console.log('indexOf1BoxUp:' + newIdx)
                 // console.log(devildiv-divY)
                 // console.log('indexValueOf1BoxUp inside layout array: '+ layout[devildiv-divY])
             }
+
             if (layout[devildiv] === 3){
                 gameOver()
             }
+
+            
         break;
 
     case 's':
@@ -90,7 +97,7 @@ switch(e.key){
         // clearInterval(cntLeft)
         
         let newIdx2 = devildiv + divY    
-            if (newIdx2 >= 0 && layout[devildiv+divY] !==0){
+            if (newIdx2 < 69 && layout[devildiv+divY] !==0){
                 // cntDown = setInterval(mvDevilDownBy1Box,milsec)
                 mvDevilDownBy1Box()
             }
@@ -106,7 +113,7 @@ switch(e.key){
         // clearInterval(cntLeft)
     
         let newIdx3 = devildiv + divX
-            if (newIdx3 >= 0 && layout[devildiv+divX] !==0){
+            if (newIdx3 < 70 && layout[devildiv+divX] !==0){
                 // cntRight = setInterval(mvDevilRightBy1Box,milsec)
                 mvDevilRightBy1Box()
             }
@@ -121,7 +128,7 @@ switch(e.key){
         // clearInterval(cntRight)
     
         let newIdx4 = devildiv - divX
-            if (newIdx4 >= 0 && layout[devildiv-divX] !==0){
+            if (newIdx4 > 0 && layout[devildiv-divX] !==0){
                 // cntLeft = setInterval(mvDevilLeftBy1Box,milsec)
                 mvDevilLeftBy1Box()
             }
@@ -134,14 +141,3 @@ switch(e.key){
 
 
     })
-
-
-
-    // function moveDevil(e){
-    //     squares[devildiv].classList.remove('devil')
-
-    //     switch(e.keyCode) {
-    //         case 'KeyW'
-
-    //     }
-    // }
