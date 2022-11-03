@@ -2,7 +2,7 @@ let devildiv = 79
 let divY = 11
 let divX = 1
 let milsec = 500
-squares[devildiv].classList.add('devil')
+boxes[devildiv].classList.add('devil')
 
 
 // let cntUp;
@@ -16,37 +16,35 @@ let newIdx2;
 let newIdx3;
 let newIdx4;
 
-
-
 window.addEventListener('keydown',(e)=>{
 
     function mvDevilUpBy1Box(){
         let newIdx = devildiv - divY
-        squares[newIdx].classList.add('devil');
-        squares[devildiv].classList.remove('devil')
+        boxes[newIdx].classList.add('devil');
+        boxes[devildiv].classList.remove('devil')
         devildiv = newIdx
     }
 
 
     function mvDevilDownBy1Box(){
         let newIdx2 = devildiv + divY
-        squares[newIdx2].classList.add('devil');
-        // console.log(squares[newIdx2].classList.add('devil'));
-        squares[devildiv].classList.remove('devil')
+        boxes[newIdx2].classList.add('devil');
+        // console.log(boxes[newIdx2].classList.add('devil'));
+        boxes[devildiv].classList.remove('devil')
         devildiv = newIdx2
     }
 
     function mvDevilRightBy1Box(){
         let newIdx3 = devildiv + divX
-        squares[newIdx3].classList.add('devil');
-        squares[devildiv].classList.remove('devil')
+        boxes[newIdx3].classList.add('devil');
+        boxes[devildiv].classList.remove('devil')
         devildiv = newIdx3
     }
 
     function mvDevilLeftBy1Box(){
         let newIdx4 = devildiv - divX
-        squares[newIdx4].classList.add('devil');
-        squares[devildiv].classList.remove('devil')
+        boxes[newIdx4].classList.add('devil');
+        boxes[devildiv].classList.remove('devil')
         devildiv = newIdx4
     }
 
@@ -59,7 +57,7 @@ window.addEventListener('keydown',(e)=>{
                     mvDevilUpBy1Box()
                 }
 
-                if(squares[devildiv].classList.contains('goku')){
+                if(boxes[devildiv].classList.contains('goku')){
                     gameOver()
                 }     
             break;
@@ -69,7 +67,7 @@ window.addEventListener('keydown',(e)=>{
                 if (newIdx2 < 99 && layout[devildiv+divY] !==0){
                     mvDevilDownBy1Box()
                 }
-                if(squares[devildiv].classList.contains('goku')){
+                if(boxes[devildiv].classList.contains('goku')){
                     gameOver()
                 }
             break;
@@ -79,7 +77,7 @@ window.addEventListener('keydown',(e)=>{
                 if (newIdx3 < 100 && layout[devildiv+divX] !==0){
                     mvDevilRightBy1Box()
                 }
-                if(squares[devildiv].classList.contains('goku')){
+                if(boxes[devildiv].classList.contains('goku')){
                     gameOver()
                 }
             break;
@@ -89,7 +87,7 @@ window.addEventListener('keydown',(e)=>{
                 if (newIdx4 > 0 && layout[devildiv-divX] !==0){
                     mvDevilLeftBy1Box()
                 }
-                if(squares[devildiv].classList.contains('goku')){
+                if(boxes[devildiv].classList.contains('goku')){
                     gameOver()
                 }
             break;

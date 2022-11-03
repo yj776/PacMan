@@ -14,31 +14,31 @@ let layout = [
 ];
 
 
-let squares = []
-function createBoard() {
+let boxes = []
+function createLayout() {
     for (let i = 0; i<layout.length; i++){
-        let square = document.createElement ('div')
-        PacManGame.appendChild(square)
-        squares.push(square)
+        let box = document.createElement ('div')
+        PacManGame.appendChild(box)
+        boxes.push(box)
         
             if (layout[i] === 0) {
-                squares[i].classList.add('wall')
+                boxes[i].classList.add('wall')
             
             }
             if(layout[i] === 1) {
-                squares[i].classList.add('pacdot')
+                boxes[i].classList.add('pacdot')
                 
             }
             if (layout[i] === 2) {
-                squares[i].classList.add('devil')
+                boxes[i].classList.add('devil')
             }
             if (layout[i] === 3) {
-                squares[i].classList.add('goku')
+                boxes[i].classList.add('goku')
             }
             if (layout[i] === 4) {
-                squares[i].classList.add('bkg')
+                boxes[i].classList.add('bkg')
             }
         }
 }
 
-createBoard()
+createLayout()

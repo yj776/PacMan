@@ -1,44 +1,46 @@
-class Enemy{
-    constructor(className,startIndex,speed){
+class enemyClass{
+    constructor(className,IdxPosition,speed){
         this.className = className
-        this.startIndex = startIndex
+        this.IdxPosition = IdxPosition
         this.speed = speed
-        this.currentIndex = startIndex
-        this.timerId=0
+        this.cntmvenemy = 0
     }
 }
 
 enemies = [
-    new Enemy('goku',34,120),
-    new Enemy('goku',42,175),
-    new Enemy('goku',71,100),
-    new Enemy('goku',26,125),
-    new Enemy('goku',30,115)
+    new enemyClass('goku',34,120),
+    new enemyClass('goku',42,175),
+    new enemyClass('goku',71,100),
+    new enemyClass('goku',26,125),
+    new enemyClass('goku',30,115)
 ]
 
 enemies.forEach(enemy => {
-    squares[enemy.currentIndex].classList.add(enemy.className)
-    squares[enemy.currentIndex].classList.add('enemy')
+    boxes[enemy.IdxPosition].classList.add(enemy.className)
+    boxes[enemy.IdxPosition].classList.add('enemy')
 })
 
 enemies.forEach(enemy => moveEnemy(enemy))
 
 function moveEnemy(enemy){
-    let directions = [-divX,divX,-divY,divY]
-    let direction = directions[Math.floor(Math.random()*directions.length)]
+    let possibleDirection = [-divX,divX,-divY,divY]
+    let direction = possibleDirection[Math.floor(Math.random()*possibleDirection.length)]
 
-    
-    enemy.timerId = setInterval(function(){
-        if(!squares[enemy.currentIndex + direction].classList.contains('wall') && !squares[enemy.currentIndex + direction].classList.contains('enemy')){
-            squares[enemy.currentIndex].classList.remove(enemy.className,'enemy')
-            enemy.currentIndex += direction
-            squares[enemy.currentIndex].classList.add(enemy.className,'enemy')
+    enemy.cntmvenemy = setInterval(function(){
+        
+        let newPositionGoku = enemy.IdxPosition + direction
+
+        if(!boxes[newPositionGoku].classList.contains('wall') && !boxes[newPositionGoku].classList.contains('enemy')){
+            boxes[enemy.IdxPosition].classList.remove(enemy.className,'enemy')
+            enemy.IdxPosition = newPositionGoku
+            // enemy.IdxPosition += direction
+            boxes[enemy.IdxPosition].classList.add(enemy.className,'enemy')
         }
-        if(squares[enemy.currentIndex].classList.contains('devil')){
+        if(boxes[enemy.IdxPosition].classList.contains('devil')){
             gameOver()
         }
         else{
-            direction = directions[Math.floor(Math.random()*directions.length)]
+            direction = possibleDirection[Math.floor(Math.random()*possibleDirection.length)]
         }
 
     },enemy.speed)
